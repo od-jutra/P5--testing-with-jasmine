@@ -1,0 +1,14 @@
+{
+  "name": "frontend-nanodegree-feedreader-master",
+  "version": "1.0.0",
+  "description": "P5-udacity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "od-jutra",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
