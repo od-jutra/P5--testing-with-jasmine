@@ -19,8 +19,8 @@ $(function() {
          * and that the URL is not empty. */
         it('has URL', function(){
             for (let feed of allFeeds){
-                expect(feed.url.length).toBeGreaterThan(0);
-                expect(feed.url).toBeDefined();                
+                expect(feed.url).toBeDefined();   
+                expect(feed.url.length).toBeGreaterThan(0);             
             }
         })
 
@@ -29,8 +29,8 @@ $(function() {
          */
         it('has name', function(){
             for (let feed of allFeeds){
-                expect(feed.name.length).toBeGreaterThan(0);
-                expect(feed.name).toBeDefined();                
+                expect(feed.name).toBeDefined();       
+                expect(feed.name.length).toBeGreaterThan(0);       
             }
         })
     });
@@ -44,9 +44,9 @@ $(function() {
         })
          /* the menu changes visibility when the menu icon is clicked. */
         it('appears and hide when menu icon is clicked', function(){
-            $('.menu-icon-link').trigger('click')
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            $('.menu-icon-link').trigger('click')
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
         })
     });
@@ -60,7 +60,7 @@ $(function() {
             });
         });
         it('there is at least a single .entry element within the .feed container', function(){
-            expect($('.feed .entry')).not.toBe(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         })
     });
     /*new test suite named "New Feed Selection" */
@@ -79,11 +79,8 @@ $(function() {
             });
         }); 
         it('load a new content when a feed is chosen', function(done){
-            for(let feed of allFeeds){
-                $(feed).trigger('click')
                 expect(firstContent).not.toBe(secondContent);
-                done();
-            }
+                done();          
         })
     });  
 }());
